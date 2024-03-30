@@ -10,6 +10,12 @@ public class UserRepository {
 
     private List<User> userList = new ArrayList<>();
 
+    public UserRepository() {
+        User myuser = new User("hakan", "afat", "hakan@test.com", "pass", "1234567890", true);
+        myuser.setApplicationList(new ArrayList<>());
+        userList.add(myuser);
+    }
+
     public void save(User user) {
         userList.add(user);
     }

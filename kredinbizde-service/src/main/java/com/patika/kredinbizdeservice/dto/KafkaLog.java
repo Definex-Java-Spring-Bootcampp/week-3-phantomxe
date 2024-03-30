@@ -15,5 +15,5 @@ import lombok.Setter;
 public class KafkaLog implements Serializable {
     private String message;
     private String description;
-    private final LocalDateTime date = LocalDateTime.now();
+    private final String date = LocalDateTime.now().toString();
 }
