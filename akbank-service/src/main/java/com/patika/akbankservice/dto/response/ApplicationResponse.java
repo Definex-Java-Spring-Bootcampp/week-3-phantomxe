@@ -1,6 +1,7 @@
 package com.patika.akbankservice.dto.response;
 
 import com.patika.akbankservice.entity.Loan;
+import com.patika.akbankservice.entity.Product;
 import com.patika.akbankservice.enums.ApplicationStatus;
 import lombok.*;
 

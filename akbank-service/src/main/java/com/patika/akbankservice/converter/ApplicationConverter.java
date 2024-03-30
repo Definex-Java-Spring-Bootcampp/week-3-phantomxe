@@ -19,6 +19,7 @@ public class ApplicationConverter {
                 .userId(request.getUserId())
                 .createDate(LocalDateTime.now())
                 .applicationStatus(ApplicationStatus.INITIAL)
+
                 .build();
         // @formatter:on
     }
@@ -28,6 +29,7 @@ public class ApplicationConverter {
                 .userId(application.getUserId())
                 .createDate(application.getCreateDate())
                 .applicationStatus(application.getApplicationStatus())
+                .loan(application.getLoan())
                 .build();
     }
 

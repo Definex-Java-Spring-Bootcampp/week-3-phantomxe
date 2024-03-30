@@ -22,11 +22,7 @@ public class ConsumerLoan extends Loan {
     public LoanType getLoanType() {
         return loanType;
     }
-
-    @Override
-    void calculate(BigDecimal amount, int installment) {
-        //tc bul, maaşı bul
-    }
+ 
 
 
 }

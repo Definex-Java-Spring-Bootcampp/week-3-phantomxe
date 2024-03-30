@@ -19,9 +19,5 @@ public class HouseLoan extends Loan {
     public LoanType getLoanType() {
         return loanType;
     }
-
-    @Override
-    void calculate(BigDecimal amount, int installment) {
-
-    }
+ 
 }

@@ -4,16 +4,22 @@ import com.patika.akbankservice.converter.ApplicationConverter;
 import com.patika.akbankservice.dto.request.ApplicationRequest;
 import com.patika.akbankservice.dto.response.ApplicationResponse;
 import com.patika.akbankservice.entity.Application;
+import com.patika.akbankservice.entity.Loan;
+import com.patika.akbankservice.factory.LoanFactory;
 import com.patika.akbankservice.repository.ApplicationRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class ApplicationService {
 
+    private LoanFactory loanFactory = new LoanFactory();
     private ApplicationRepository applicationRepository = new ApplicationRepository();
 
     private final ApplicationConverter applicationConverter;
@@ -25,8 +31,13 @@ public class ApplicationService {
 
     public ApplicationResponse createApplication(ApplicationRequest request) {
         Application application = applicationConverter.toApplication(request);
+        Loan loan = loanFactory.generateLoan(request.getLoanType(), request.getAmount(), request.getInstallment());
+        log.info("Loan created." + loan.toString());
+        application.setLoan(loan);
 
-        return applicationConverter.toResponse(applicationRepository.save(application));
+        applicationRepository.save(application);
+
+        return applicationConverter.toResponse(application);
     }
 
 

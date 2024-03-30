@@ -2,11 +2,11 @@ package com.patika.kredinbizdeservice.model;
 
 import java.math.BigDecimal;
 
-public abstract class Loan implements Product {
+public class Loan implements Product {
 
     private BigDecimal amount;
     private Integer installment;
-    private Bank bank;
+    private String bank;
     private Double interestRate;
     // private Campaign campaign; // kampanyalı kredileri üstte çıkart
 
@@ -21,7 +21,7 @@ public abstract class Loan implements Product {
         this.interestRate = interestRate;
     }
 
-    abstract void calculate(BigDecimal amount, int installment);
+    //abstract void calculate(BigDecimal amount, int installment);
 
     public BigDecimal getAmount() {
         return amount;
@@ -39,11 +39,11 @@ public abstract class Loan implements Product {
         this.installment = installment;
     }
 
-    public Bank getBank() {
+    public String getBank() {
         return bank;
     }
 
-    public void setBank(Bank bank) {
+    public void setBank(String bank) {
         this.bank = bank;
     }
 

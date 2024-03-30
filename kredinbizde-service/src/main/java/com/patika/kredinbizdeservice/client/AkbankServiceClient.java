@@ -4,8 +4,11 @@ import com.patika.kredinbizdeservice.client.dto.request.AkbankApplicationRequest
 import com.patika.kredinbizdeservice.client.dto.response.ApplicationResponse;
 import com.patika.kredinbizdeservice.client.dto.response.ApplicationListResponse;
 
+import java.util.List;
+
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -17,5 +20,8 @@ public interface AkbankServiceClient {
     ApplicationResponse createApplication(@RequestBody AkbankApplicationRequest request);
 
     @GetMapping("api/akbank/v1/applications")
-    ApplicationListResponse getApplications(@RequestBody AkbankApplicationRequest request);
+    List<ApplicationResponse> getApplications(@RequestBody AkbankApplicationRequest request);
+
+    @GetMapping("api/akbank/v1/applications/{userId}")
+    List<ApplicationResponse> getApplicationsByUserId(@PathVariable Long userId);
 }

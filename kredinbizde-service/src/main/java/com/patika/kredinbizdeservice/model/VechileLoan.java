@@ -21,9 +21,5 @@ public class VechileLoan extends Loan {
     public LoanType getLoanType() {
         return loanType;
     }
-
-    @Override
-    void calculate(BigDecimal amount, int installment) {
-        //istediği kadar ödeme yapabilir.
-    }
+ 
 }

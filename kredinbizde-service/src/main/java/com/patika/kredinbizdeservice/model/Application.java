@@ -7,8 +7,7 @@ import java.time.LocalDateTime;
 
 public class Application {
 
-    private Loan loan;
-    private Product product;
+    private Loan loan; 
     private User user;
     private LocalDateTime createDate;
     private ApplicationStatus applicationStatus;
@@ -24,8 +23,7 @@ public class Application {
         this.applicationStatus = ApplicationStatus.INITIAL;
     }*/
 
-    public Application(Product product, User user, LocalDateTime createDate) {
-        this.product = product;
+    public Application(User user, LocalDateTime createDate) { 
         this.user = user;
         this.createDate = createDate;
         this.applicationStatus = ApplicationStatus.INITIAL;

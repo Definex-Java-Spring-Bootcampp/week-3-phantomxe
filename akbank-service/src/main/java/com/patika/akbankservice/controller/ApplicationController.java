@@ -18,7 +18,8 @@ public class ApplicationController {
 
     @PostMapping
     public ApplicationResponse createApplication(@RequestBody ApplicationRequest request) {
-        return applicationService.createApplication(request);
+        System.out.println(request);
+        return applicationService.createApplication(request); 
     }
 
     @GetMapping
