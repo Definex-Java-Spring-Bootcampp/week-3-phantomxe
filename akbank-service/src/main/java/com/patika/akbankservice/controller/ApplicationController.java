@@ -26,4 +26,9 @@ public class ApplicationController {
         return ResponseEntity.ok(applicationService.getAll());
     }
 
+    @GetMapping("/{userId}")
+    public ResponseEntity<List<ApplicationResponse>> getByUserId(@PathVariable Long userId) {
+        return ResponseEntity.ok(applicationService.getByUserId(userId));
+    }
+
 }

@@ -16,4 +16,5 @@ public class Application {
     private Long userId;
     private LocalDateTime createDate;
     private ApplicationStatus applicationStatus;
+    private Product product;
 }

@@ -18,4 +18,8 @@ public class ApplicationRepository {
     public List<Application> getAll() {
         return applicationList;
     }
+
+    public List<Application> getByUserId(Long userId) { 
+        return applicationList.stream().filter(app -> app.getUserId().equals(userId)).toList();
+    }
 }

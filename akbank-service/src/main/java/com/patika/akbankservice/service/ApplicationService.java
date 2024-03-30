@@ -24,7 +24,6 @@ public class ApplicationService {
     }*/
 
     public ApplicationResponse createApplication(ApplicationRequest request) {
-
         Application application = applicationConverter.toApplication(request);
 
         return applicationConverter.toResponse(applicationRepository.save(application));
@@ -33,6 +32,13 @@ public class ApplicationService {
 
     public List<ApplicationResponse> getAll() {
         List<Application> applications = applicationRepository.getAll();
+
+        return applicationConverter.toResponseList(applications);
+    }
+
+
+    public List<ApplicationResponse> getByUserId(Long userId) {
+        List<Application> applications = applicationRepository.getByUserId(userId); 
 
         return applicationConverter.toResponseList(applications);
     }
