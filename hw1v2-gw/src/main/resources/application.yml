@@ -1,0 +1,20 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: hw1v2-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: customer-service
+          uri: CUSTOMER-SERVICE
+          predicates:
+             - Path=/api/customers/**
+        - id: order-service
+          uri: ORDER-SERVICE
+          predicates:
+             - Path=/api/orders/**
+        - id: invoice-service
+          uri: INVOICE-SERVICE
+          predicates:
+             - Path=/api/invoice/**
