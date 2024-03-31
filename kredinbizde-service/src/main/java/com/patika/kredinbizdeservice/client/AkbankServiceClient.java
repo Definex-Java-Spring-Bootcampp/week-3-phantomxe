@@ -20,7 +20,7 @@ public interface AkbankServiceClient {
     ApplicationResponse createApplication(@RequestBody AkbankApplicationRequest request);
 
     @GetMapping("api/akbank/v1/applications")
-    List<ApplicationResponse> getApplications(@RequestBody AkbankApplicationRequest request);
+    List<ApplicationResponse> getApplications();
 
     @GetMapping("api/akbank/v1/applications/{userId}")
     List<ApplicationResponse> getApplicationsByUserId(@PathVariable Long userId);
