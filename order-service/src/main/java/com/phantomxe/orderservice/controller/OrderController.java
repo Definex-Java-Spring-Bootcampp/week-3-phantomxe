@@ -43,6 +43,11 @@ public class OrderController {
         return orderService.getBufferedOrders();
     } 
 
+    @GetMapping("/buffer/{orderId}")
+    public Order getBufferedOrder(@PathVariable Integer orderId) {
+        return orderService.getBufferedOrders().get(orderId);
+    } 
+
     @PostMapping("/buffer/{orderId}/addProduct")
     public Order addProductToOrder(@PathVariable Integer orderId, @RequestBody OrderAddProductRequest req) {
         return orderService.addProductToOrder(orderId, req.getProductName(), req.getQuantity());

@@ -17,13 +17,13 @@ import com.phantomxe.orderservice.entity.Product;
 import com.phantomxe.orderservice.exceptions.OrderException;
 import com.phantomxe.orderservice.repository.OrderRepository;
 import com.phantomxe.orderservice.repository.ProductRepository;
-
+ 
 import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Slf4j
+@Slf4j 
 public class OrderService {
-
+ 
     @Autowired
     private InvoiceServiceClient invoiceServiceClient;
 

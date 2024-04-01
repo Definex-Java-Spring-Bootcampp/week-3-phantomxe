@@ -6,11 +6,13 @@ import org.springframework.stereotype.Service;
 import com.phantomxe.orderservice.client.CustomerServiceClient;
 import com.phantomxe.orderservice.entity.Customer;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class CustomerService {
-    
-    @Autowired
-    private CustomerServiceClient customerServiceClient;
+     
+    private final CustomerServiceClient customerServiceClient;
 
     public Customer getCustomerByEmail(String email) {
         return customerServiceClient.getCustomerByEmail(email);

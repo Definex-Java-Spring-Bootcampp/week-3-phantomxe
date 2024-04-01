@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: 8090
 spring:
   application:
     name: hw1v2-gateway
@@ -7,14 +7,14 @@ spring:
     gateway:
       routes:
         - id: customer-service
-          uri: CUSTOMER-SERVICE
+          uri: lb://CUSTOMER-SERVICE
           predicates:
              - Path=/api/customers/**
         - id: order-service
-          uri: ORDER-SERVICE
+          uri: lb://ORDER-SERVICE
           predicates:
              - Path=/api/orders/**
         - id: invoice-service
-          uri: INVOICE-SERVICE
+          uri: lb://INVOICE-SERVICE
           predicates:
-             - Path=/api/invoice/**
+             - Path=/api/invoices/**
